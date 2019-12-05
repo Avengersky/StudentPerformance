@@ -1,0 +1,26 @@
+server:
+  port: 7070
+
+spring:
+  application:
+    name: "StudentPerformance"
+  datasource:
+    url: jdbc:mysql://localhost:3306/student_performance?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: root
+
+  main:
+    allow-bean-definition-overriding: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  llogging:
+    level:
+      org.springframework: ERROR, WARN
+      com.mkyong: DEBUG
+    pattern:
+      console: "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
+      file: "%d %p %c{1.} [%t] %m%n"
+    file: app.log
